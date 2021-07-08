@@ -1,4 +1,4 @@
-# tryhackme-writups
+# tryhackme-writeups
 
 
 I am trying to make a Folder per CTF I do, and also add an "article" to the wiki. 

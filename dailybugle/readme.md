@@ -1,26 +1,33 @@
-```
-ip: 10.10.220.84
-```
+## DailyBugle
+_I did this Box in multiple steps and not in 1 sitting, so the IP might change throughout_
 
-## I did this Box in multiple steps and not in 1 sitting, so the IP might change throughout ###
+First lets do some basic Recon based on the webpage we can see at the given IP.
 
+What WebServer is serving us?
+``
+Server:Apache/2.4.6 (CentOS) PHP/5.6.40
+``
 
-Server:
-Apache/2.4.6 (CentOS) PHP/5.6.40
+### We can see its joomla, lets see if we can find which version that is:
+I used google to find some simple Joomla information, see if we can find the version by checking the joomla.xml
 
-
-Find Joomla Version :
 Google shows this URL might be accessible:
+```
 http://10.10.244.64/administrator/manifests/files/joomla.xml
 Shows version : 3.7.0
 
+We also see a username for the article:
+
 Article written by :
   Written by Super User
+```
 
+Now that we have the Joomla version, we can check exploitDB.com if something is known, and there is a SQLmap (SQLI Exploit in this version).
 
+This will be the first time i _really_ use SQL map
 
-SqlMAP :
-  After a lot of trial and error,Steps:
+## SqlMAP :
+After a lot of trial and error this is the steps i took to get login Information for Super User.
 
     1. Check all databases with -DBS
       --dbs
@@ -31,7 +38,7 @@ SqlMAP :
     4. Google which tables exist and which hold user data.
     5. Enumerate #__users
     6. Find columns, dump password.
-
+```
     Database: joomla
     Table: #__users
     [1 entry]
@@ -40,6 +47,8 @@ SqlMAP :
     +-----+------------+--------------------------------------------------------------+
     | 811 | Super User | $2y$10$0veO/JSFh4389Lluc4Xya.dfy2MF.bZhz0jVMw.V.d3p12kBtZutm |
     +-----+------------+--------------------------------------------------------------+
+```
+We have the password hash for the Super User! Lets see if we can find out what kind of password this is and then crack it!
 
 `hashid '$2y$10$0veO/JSFh4389Lluc4Xya.dfy2MF.bZhz0jVMw.V.d3p12kBtZutm'`
 Produces:

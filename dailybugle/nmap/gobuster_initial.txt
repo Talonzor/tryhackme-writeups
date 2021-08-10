@@ -1,0 +1,29 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.244.64
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2021/07/12 11:31:49 Starting gobuster in directory enumeration mode
+===============================================================
+/images               (Status: 301) [Size: 235] [--> http://10.10.244.64/images/]
+/media                (Status: 301) [Size: 234] [--> http://10.10.244.64/media/] 
+/templates            (Status: 301) [Size: 238] [--> http://10.10.244.64/templates/]
+/modules              (Status: 301) [Size: 236] [--> http://10.10.244.64/modules/]  
+/bin                  (Status: 301) [Size: 232] [--> http://10.10.244.64/bin/]      
+/plugins              (Status: 301) [Size: 236] [--> http://10.10.244.64/plugins/]  
+/includes             (Status: 301) [Size: 237] [--> http://10.10.244.64/includes/] 
+/language             (Status: 301) [Size: 237] [--> http://10.10.244.64/language/] 
+/components           (Status: 301) [Size: 239] [--> http://10.10.244.64/components/]
+/cache                (Status: 301) [Size: 234] [--> http://10.10.244.64/cache/]     
+/libraries            (Status: 301) [Size: 238] [--> http://10.10.244.64/libraries/] 
+/tmp                  (Status: 301) [Size: 232] [--> http://10.10.244.64/tmp/]       
+/layouts              (Status: 301) [Size: 236] [--> http://10.10.244.64/layouts/]   
+/administrator        (Status: 301) [Size: 242] [--> http://10.10.244.64/administrator/]
+/cli                  (Status: 301) [Size: 232] [--> http://10.10.244.64/cli/]          

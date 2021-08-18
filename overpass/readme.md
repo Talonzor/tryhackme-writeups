@@ -5,7 +5,7 @@ Difficulty: Easy/Beginner
 ```
 IP : 10.10.134.45
 
-About us Info might be useful:
+About us Info might be useful (Spoilers; It wasnt.):
 ```
   Ninja - Lead Developer
   Pars - Shibe Enthusiast and Emotional Support Animal Manager
@@ -14,10 +14,10 @@ About us Info might be useful:
   MuirlandOracle - Cryptography Consultant
 ```
 
-I first ran nmap and Gobuster to see if we can find some interesting things.
+I first ran nmap and Gobuster to see if we can find some interesting things. (see /nmap/ folder in Github)
 
-nmap did not give me any results that i cared about.4
-
+nmap did not give me any results that i cared about, but gobuster revealed some nice locations.
+24
 Found /admin/ with gobuster
 
 Found Javascript checking if some cookie is set full-stop.
@@ -31,8 +31,8 @@ We found a SSH key here
 LINK TO id_rsa
 ```
 
+Login using this SSH key,
 
-2
 First User Flag
 ``thm{65c1aaf000506e56996822c6281e6bf7}``
 

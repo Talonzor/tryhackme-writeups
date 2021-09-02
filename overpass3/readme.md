@@ -1,6 +1,5 @@
-```niemand boeit er wat er in noord korea gebeurd, waarom zou afganistan oppeens anders zijn
-Ehh?
-room: https://tryhackme.com/room/overpass3hosting
+```
+Room: https://tryhackme.com/room/overpass3hosting
 Style: Unguided
 Difficulty: Medium
 ```

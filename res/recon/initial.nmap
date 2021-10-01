@@ -1,0 +1,11 @@
+# Nmap 7.91 scan initiated Fri Oct  1 08:40:24 2021 as: nmap -A -oA ./initial 10.10.31.148
+Nmap scan report for 10.10.31.148
+Host is up (0.027s latency).
+Not shown: 999 closed ports
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Oct  1 08:40:31 2021 -- 1 IP address (1 host up) scanned in 7.58 seconds

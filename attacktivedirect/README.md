@@ -74,6 +74,11 @@ On a whim we will base64 decode it see if it resolves with any usefull informati
 
 Now the Walkthrough tells us to use this Backup information to "dumpSecrets" with this backup account. lets try it.
 
+
+
+`sudo impacket-secretsdump backup:backup2517860@spookysec.local | tee "secretsdump_output.txt"`
+This gives as a giant file you can check in the root folder called secretsdump_output.txt. This shows us alot of hashes aand usefull information. Ofcourse we're interested in the Administrator account. 
+
 From this we get a giant list of dumped Credentials, we can use these credentials to log-in with the Master account `Administrator` by using a technique called "pass the hash". This allows us to use the hash as credentials to login with the Administrator account.
 
 For this we use software called Evil Win-Rm, and we pass the hash we found from this line to it.

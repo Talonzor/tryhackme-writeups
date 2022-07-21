@@ -1,0 +1,267 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.114.119
+[+] Method:                  POST
+[+] Threads:                 30
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2022/07/10 15:49:18 Starting gobuster in directory enumeration mode
+===============================================================
+/search               (Status: 501) [Size: 497]
+/img                  (Status: 501) [Size: 497]
+/default              (Status: 501) [Size: 497]
+/12                   (Status: 501) [Size: 497]
+/blog                 (Status: 501) [Size: 497]
+/logo                 (Status: 501) [Size: 497]
+/contact              (Status: 501) [Size: 497]
+/about                (Status: 501) [Size: 497]
+/new                  (Status: 501) [Size: 497]
+/10                   (Status: 501) [Size: 497]
+/11                   (Status: 501) [Size: 497]
+/privacy              (Status: 501) [Size: 497]
+/spacer               (Status: 501) [Size: 497]
+/cgi-bin              (Status: 501) [Size: 497]
+/rss                  (Status: 501) [Size: 497]
+/download             (Status: 501) [Size: 497]
+/index                (Status: 501) [Size: 497]
+/faq                  (Status: 501) [Size: 497]
+/home                 (Status: 501) [Size: 497]
+/2005                 (Status: 501) [Size: 497]
+/2006                 (Status: 501) [Size: 497]
+/news                 (Status: 501) [Size: 497]
+/sitemap              (Status: 501) [Size: 497]
+/images               (Status: 501) [Size: 497]
+/warez                (Status: 501) [Size: 497]
+/serial               (Status: 501) [Size: 497]
+/products             (Status: 501) [Size: 497]
+/crack                (Status: 501) [Size: 497]
+/archives             (Status: 501) [Size: 497]
+/full                 (Status: 501) [Size: 497]
+/09                   (Status: 501) [Size: 497]
+/links                (Status: 501) [Size: 497]
+/08                   (Status: 501) [Size: 497]
+/2                    (Status: 501) [Size: 497]
+/06                   (Status: 501) [Size: 497]
+/1                    (Status: 501) [Size: 497]
+/01                   (Status: 501) [Size: 497]
+/07                   (Status: 501) [Size: 497]
+/articles             (Status: 501) [Size: 497]
+/login                (Status: 501) [Size: 497]
+/support              (Status: 501) [Size: 497]
+/05                   (Status: 501) [Size: 497]
+/03                   (Status: 501) [Size: 497]
+/keygen               (Status: 501) [Size: 497]
+/article              (Status: 501) [Size: 497]
+/04                   (Status: 501) [Size: 497]
+/02                   (Status: 501) [Size: 497]
+/help                 (Status: 501) [Size: 497]
+/archive              (Status: 501) [Size: 497]
+/events               (Status: 501) [Size: 497]
+/forum                (Status: 501) [Size: 497]
+/software             (Status: 501) [Size: 497]
+/register             (Status: 501) [Size: 497]
+/downloads            (Status: 501) [Size: 497]
+/en                   (Status: 501) [Size: 497]
+/3                    (Status: 501) [Size: 497]
+/security             (Status: 501) [Size: 497]
+/13                   (Status: 501) [Size: 497]
+/content              (Status: 501) [Size: 497]
+/category             (Status: 501) [Size: 497]
+/4                    (Status: 501) [Size: 497]
+/15                   (Status: 501) [Size: 497]
+/14                   (Status: 501) [Size: 497]
+/media                (Status: 501) [Size: 497]
+/main                 (Status: 501) [Size: 497]
+/press                (Status: 501) [Size: 497]
+/templates            (Status: 501) [Size: 497]
+/services             (Status: 501) [Size: 497]
+/icons                (Status: 501) [Size: 497]
+/profile              (Status: 501) [Size: 497]
+/resources            (Status: 501) [Size: 497]
+/info                 (Status: 501) [Size: 497]
+/18                   (Status: 501) [Size: 497]
+/2004                 (Status: 501) [Size: 497]
+/16                   (Status: 501) [Size: 497]
+/html                 (Status: 501) [Size: 497]
+/files                (Status: 501) [Size: 497]
+/docs                 (Status: 501) [Size: 497]
+/20                   (Status: 501) [Size: 497]
+/contactus            (Status: 501) [Size: 497]
+/features             (Status: 501) [Size: 497]
+/21                   (Status: 501) [Size: 497]
+/5                    (Status: 501) [Size: 497]
+/22                   (Status: 501) [Size: 497]
+/page                 (Status: 501) [Size: 497]
+/6                    (Status: 501) [Size: 497]
+/misc                 (Status: 501) [Size: 497]
+/partners             (Status: 501) [Size: 497]
+/19                   (Status: 501) [Size: 497]
+/terms                (Status: 501) [Size: 497]
+/24                   (Status: 501) [Size: 497]
+/23                   (Status: 501) [Size: 497]
+/2007                 (Status: 501) [Size: 497]
+/i                    (Status: 501) [Size: 497]
+/27                   (Status: 501) [Size: 497]
+/26                   (Status: 501) [Size: 497]
+/17                   (Status: 501) [Size: 497]
+/9                    (Status: 501) [Size: 497]
+/xml                  (Status: 501) [Size: 497]
+/legal                (Status: 501) [Size: 497]
+/top                  (Status: 501) [Size: 497]
+/banners              (Status: 501) [Size: 497]
+/30                   (Status: 501) [Size: 497]
+/29                   (Status: 501) [Size: 497]
+/7                    (Status: 501) [Size: 497]
+/28                   (Status: 501) [Size: 497]
+/tools                (Status: 501) [Size: 497]
+/projects             (Status: 501) [Size: 497]
+/25                   (Status: 501) [Size: 497]
+/themes               (Status: 501) [Size: 497]
+/feed                 (Status: 501) [Size: 497]
+/0                    (Status: 501) [Size: 497]
+/linux                (Status: 501) [Size: 497]
+/user                 (Status: 501) [Size: 497]
+/jobs                 (Status: 501) [Size: 497]
+/business             (Status: 501) [Size: 497]
+/video                (Status: 501) [Size: 497]
+/forums               (Status: 501) [Size: 497]
+/8                    (Status: 501) [Size: 497]
+/books                (Status: 501) [Size: 497]
+/email                (Status: 501) [Size: 497]
+/reviews              (Status: 501) [Size: 497]
+/banner               (Status: 501) [Size: 497]
+/research             (Status: 501) [Size: 497]
+/feedback             (Status: 501) [Size: 497]
+/graphics             (Status: 501) [Size: 497]
+/ads                  (Status: 501) [Size: 497]
+/pdf                  (Status: 501) [Size: 497]
+/view                 (Status: 501) [Size: 497]
+/print                (Status: 501) [Size: 497]
+/modules              (Status: 501) [Size: 497]
+/2003                 (Status: 501) [Size: 497]
+/blank                (Status: 501) [Size: 497]
+/company              (Status: 501) [Size: 497]
+/pub                  (Status: 501) [Size: 497]
+/games                (Status: 501) [Size: 497]
+/common               (Status: 501) [Size: 497]
+/site                 (Status: 501) [Size: 497]
+/copyright            (Status: 501) [Size: 497]
+/aboutus              (Status: 501) [Size: 497]
+/comments             (Status: 501) [Size: 497]
+/sports               (Status: 501) [Size: 497]
+/people               (Status: 501) [Size: 497]
+/product              (Status: 501) [Size: 497]
+/buttons              (Status: 501) [Size: 497]
+/english              (Status: 501) [Size: 497]
+/logos                (Status: 501) [Size: 497]
+/image                (Status: 501) [Size: 497]
+/story                (Status: 501) [Size: 497]
+/31                   (Status: 501) [Size: 497]
+/uploads              (Status: 501) [Size: 497]
+/blogs                (Status: 501) [Size: 497]
+/subscribe            (Status: 501) [Size: 497]
+/gallery              (Status: 501) [Size: 497]
+/atom                 (Status: 501) [Size: 497]
+/newsletter           (Status: 501) [Size: 497]
+/stats                (Status: 501) [Size: 497]
+/careers              (Status: 501) [Size: 497]
+/pages                (Status: 501) [Size: 497]
+/music                (Status: 501) [Size: 497]
+/publications         (Status: 501) [Size: 497]
+/calendar             (Status: 501) [Size: 497]
+/technology           (Status: 501) [Size: 497]
+/stories              (Status: 501) [Size: 497]
+/data                 (Status: 501) [Size: 497]
+/photos               (Status: 501) [Size: 497]
+/community            (Status: 501) [Size: 497]
+/papers               (Status: 501) [Size: 497]
+/history              (Status: 501) [Size: 497]
+/www                  (Status: 501) [Size: 497]
+/submit               (Status: 501) [Size: 497]
+/web                  (Status: 501) [Size: 497]
+/s                    (Status: 501) [Size: 497]
+/arrow                (Status: 501) [Size: 497]
+/library              (Status: 501) [Size: 497]
+/wiki                 (Status: 501) [Size: 497]
+/education            (Status: 501) [Size: 497]
+/header               (Status: 501) [Size: 497]
+/internet             (Status: 501) [Size: 497]
+/go                   (Status: 501) [Size: 497]
+/in                   (Status: 501) [Size: 497]
+/b                    (Status: 501) [Size: 497]
+/advertise            (Status: 501) [Size: 497]
+/spam                 (Status: 501) [Size: 497]
+/a                    (Status: 501) [Size: 497]
+/users                (Status: 501) [Size: 497]
+/nav                  (Status: 501) [Size: 497]
+/topics               (Status: 501) [Size: 497]
+/Images               (Status: 501) [Size: 497]
+/mail                 (Status: 501) [Size: 497]
+/disclaimer           (Status: 501) [Size: 497]
+/store                (Status: 501) [Size: 497]
+/members              (Status: 501) [Size: 497]
+/clear                (Status: 501) [Size: 497]
+/c                    (Status: 501) [Size: 497]
+/feeds                (Status: 501) [Size: 497]
+/awards               (Status: 501) [Size: 497]
+/2002                 (Status: 501) [Size: 497]
+/Default              (Status: 501) [Size: 497]
+/general              (Status: 501) [Size: 497]
+/dir                  (Status: 501) [Size: 497]
+/pics                 (Status: 501) [Size: 497]
+/solutions            (Status: 501) [Size: 497]
+/map                  (Status: 501) [Size: 497]
+/signup               (Status: 501) [Size: 497]
+/News                 (Status: 501) [Size: 497]
+/doc                  (Status: 501) [Size: 497]
+/weblog               (Status: 501) [Size: 497]
+/public               (Status: 501) [Size: 497]
+/index2               (Status: 501) [Size: 497]
+/homepage             (Status: 501) [Size: 497]
+/contacts             (Status: 501) [Size: 497]
+/shop                 (Status: 501) [Size: 497]
+/de                   (Status: 501) [Size: 497]
+/button               (Status: 501) [Size: 497]
+/fr                   (Status: 501) [Size: 497]
+/list                 (Status: 501) [Size: 497]
+/viewtopic            (Status: 501) [Size: 497]
+/travel               (Status: 501) [Size: 497]
+/documents            (Status: 501) [Size: 497]
+/pixel                (Status: 501) [Size: 497]
+/overview             (Status: 501) [Size: 497]
+/tips                 (Status: 501) [Size: 497]
+/contact_us           (Status: 501) [Size: 497]
+/adclick              (Status: 501) [Size: 497]
+/wp-content           (Status: 501) [Size: 497]
+/catalog              (Status: 501) [Size: 497]
+/us                   (Status: 501) [Size: 497]
+/movies               (Status: 501) [Size: 497]
+/p                    (Status: 501) [Size: 497]
+/staff                (Status: 501) [Size: 497]
+/wireless             (Status: 501) [Size: 497]
+/hardware             (Status: 501) [Size: 497]
+/global               (Status: 501) [Size: 497]
+/apps                 (Status: 501) [Size: 497]
+/online               (Status: 501) [Size: 497]
+/screenshots          (Status: 501) [Size: 497]
+/directory            (Status: 501) [Size: 497]
+/other                (Status: 501) [Size: 497]
+/mobile               (Status: 501) [Size: 497]
+/version              (Status: 501) [Size: 497]
+/admin                (Status: 501) [Size: 497]
+/advertising          (Status: 501) [Size: 497]
+/welcome              (Status: 501) [Size: 497]
+/t                    (Status: 501) [Size: 497]
+/tech                 (Status: 501) [Size: 497]
+/faqs                 (Status: 501) [Size: 497]
+/policy               (Status: 501) [Size: 497]
+/training             (Status: 501) [Size: 497]
+/link                 (Status: 501) [Size: 497]
+/2001                 (Status: 501) [Size: 497]
+/releases             (Status: 501) [Size: 497]
+/member               (Status: 501) [Size: 497]

@@ -14,7 +14,7 @@ Lets start with a nmap scan on the 1000 most known ports:
 | 135/tcp | open | msrpc | Microsoft Windows RPC  |
 | 139/tcp | open | netbios-ssn | Microsoft Windows netbios-ssn  |
 | 3268/tcp | open | ldap | Microsoft Windows Active Directory LDAP  |
-| 3269/tcp | open | tcpwrapped |   |
+| 3269/tcp | open | tcpwrapped |   |2
 | 3389/tcp | open | ms-wbt-server | Microsoft Terminal Services  |
 | 389/tcp | open | ldap | Microsoft Windows Active Directory LDAP  |
 | 445/tcp | open | microsoft-ds |   |
@@ -36,6 +36,7 @@ This registers the domain name for that ip and we can proceed.
 
 For this assignment, the user/password lists were adjusted 4
 
+We pull the hash out of Kerbrute which gives us something to "bruteforce".
 user: svc-admin
 password: management2005
 
@@ -77,7 +78,7 @@ Now the Walkthrough tells us to use this Backup information to "dumpSecrets" wit
 
 
 `sudo impacket-secretsdump backup:backup2517860@spookysec.local | tee "secretsdump_output.txt"`
-This gives as a giant file you can check in the root folder called secretsdump_output.txt. This shows us alot of hashes aand usefull information. Ofcourse we're interested in the Administrator account. 
+This gives as a giant file yo22u can check in the root folder called secretsdump_output.txt. This shows us alot of hashes aand usefull information. Ofcourse we're interested in the Administrator account.
 
 From this we get a giant list of dumped Credentials, we can use these credentials to log-in with the Master account `Administrator` by using a technique called "pass the hash". This allows us to use the hash as credentials to login with the Administrator account.
 

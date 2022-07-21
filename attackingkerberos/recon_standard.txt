@@ -1,0 +1,100 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-05-17 07:06 EDT
+NSE: Loaded 153 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+Initiating Ping Scan at 07:06
+Scanning 10.10.98.114 [2 ports]
+Completed Ping Scan at 07:06, 0.03s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 07:06
+Completed Parallel DNS resolution of 1 host. at 07:06, 6.53s elapsed
+Initiating Connect Scan at 07:06
+Scanning 10.10.98.114 [1000 ports]
+Discovered open port 135/tcp on 10.10.98.114
+Discovered open port 53/tcp on 10.10.98.114
+Discovered open port 445/tcp on 10.10.98.114
+Discovered open port 22/tcp on 10.10.98.114
+Discovered open port 3389/tcp on 10.10.98.114
+Discovered open port 139/tcp on 10.10.98.114
+Discovered open port 389/tcp on 10.10.98.114
+Discovered open port 3269/tcp on 10.10.98.114
+Discovered open port 464/tcp on 10.10.98.114
+Discovered open port 88/tcp on 10.10.98.114
+Discovered open port 3268/tcp on 10.10.98.114
+Discovered open port 636/tcp on 10.10.98.114
+Discovered open port 593/tcp on 10.10.98.114
+Completed Connect Scan at 07:06, 1.42s elapsed (1000 total ports)
+Initiating Service scan at 07:06
+Scanning 13 services on 10.10.98.114
+Completed Service scan at 07:06, 7.55s elapsed (13 services on 1 host)
+NSE: Script scanning 10.10.98.114.
+Initiating NSE at 07:06
+Completed NSE at 07:06, 8.38s elapsed
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.89s elapsed
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+Nmap scan report for 10.10.98.114
+Host is up (0.037s latency).
+Not shown: 987 closed ports
+PORT     STATE SERVICE       VERSION
+22/tcp   open  ssh           OpenSSH for_Windows_7.7 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 68:f2:8b:17:15:7c:90:d7:4e:0f:8e:d1:4c:6a:be:98 (RSA)
+|   256 b0:3a:a7:c3:88:2e:c1:0b:d7:be:1e:43:1c:f7:5b:34 (ECDSA)
+|_  256 03:c0:ee:58:32:ae:6a:cc:8e:1a:7d:8b:20:c8:a2:bb (ED25519)
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2022-05-17 11:05:23Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: CONTROLLER.local0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: CONTROLLER.local0., Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: CONTROLLER
+|   NetBIOS_Domain_Name: CONTROLLER
+|   NetBIOS_Computer_Name: CONTROLLER-1
+|   DNS_Domain_Name: CONTROLLER.local
+|   DNS_Computer_Name: CONTROLLER-1.CONTROLLER.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-05-17T11:05:25+00:00
+| ssl-cert: Subject: commonName=CONTROLLER-1.CONTROLLER.local
+| Issuer: commonName=CONTROLLER-1.CONTROLLER.local
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-05-16T10:52:18
+| Not valid after:  2022-11-15T10:52:18
+| MD5:   3cb8 e232 6b30 5088 5251 91c2 c120 b940
+|_SHA-1: f4d0 5755 a339 ffd3 420e f075 0cb8 18a7 7452 7387
+|_ssl-date: 2022-05-17T11:05:33+00:00; -1m05s from scanner time.
+Service Info: Host: CONTROLLER-1; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: -1m05s, deviation: 0s, median: -1m05s
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2022-05-17T11:05:26
+|_  start_date: N/A
+
+NSE: Script Post-scanning.
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 25.13 seconds

@@ -1,0 +1,64 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-21 09:52 EDT
+NSE: Loaded 153 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 09:52
+Completed NSE at 09:52, 0.00s elapsed
+Initiating NSE at 09:52
+Completed NSE at 09:52, 0.00s elapsed
+Initiating NSE at 09:52
+Completed NSE at 09:52, 0.00s elapsed
+Initiating Ping Scan at 09:52
+Scanning 10.10.130.201 [2 ports]
+Completed Ping Scan at 09:52, 0.03s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 09:52
+Completed Parallel DNS resolution of 1 host. at 09:52, 5.51s elapsed
+Initiating Connect Scan at 09:52
+Scanning 10.10.130.201 [1000 ports]
+Discovered open port 22/tcp on 10.10.130.201
+Discovered open port 80/tcp on 10.10.130.201
+Discovered open port 32768/tcp on 10.10.130.201
+Completed Connect Scan at 09:52, 4.44s elapsed (1000 total ports)
+Initiating Service scan at 09:52
+Scanning 3 services on 10.10.130.201
+Completed Service scan at 09:52, 11.17s elapsed (3 services on 1 host)
+NSE: Script scanning 10.10.130.201.
+Initiating NSE at 09:52
+Completed NSE at 09:52, 1.18s elapsed
+Initiating NSE at 09:52
+Completed NSE at 09:52, 0.13s elapsed
+Initiating NSE at 09:52
+Completed NSE at 09:52, 0.00s elapsed
+Nmap scan report for 10.10.130.201
+Host is up (0.029s latency).
+Not shown: 997 filtered ports
+PORT      STATE SERVICE VERSION
+22/tcp    open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 c8:3c:c5:62:65:eb:7f:5d:92:24:e9:3b:11:b5:23:b9 (RSA)
+|   256 06:b7:99:94:0b:09:14:39:e1:7f:bf:c7:5f:99:d3:9f (ECDSA)
+|_  256 0a:75:be:a2:60:c6:2b:8a:df:4f:45:71:61:ab:60:b7 (ED25519)
+80/tcp    open  http    nginx 1.19.2
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| http-robots.txt: 1 disallowed entry 
+|_/admin
+|_http-server-header: nginx/1.19.2
+|_http-title: The Marketplace
+32768/tcp open  http    Node.js (Express middleware)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| http-robots.txt: 1 disallowed entry 
+|_/admin
+|_http-title: The Marketplace
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+NSE: Script Post-scanning.
+Initiating NSE at 09:52
+Completed NSE at 09:52, 0.00s elapsed
+Initiating NSE at 09:52
+Completed NSE at 09:52, 0.00s elapsed
+Initiating NSE at 09:52
+Completed NSE at 09:52, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 23.07 seconds

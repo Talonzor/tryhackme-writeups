@@ -25,7 +25,7 @@ Matching Defaults entries for alice on wonderland:
 User alice may run the following commands on wonderland:
     (rabbit) /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py
 
-```
+```dG9rZW49ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5U1dRaU9qSXNJblZ6WlhKdVlXMWxJam9pYldsamFHRmxiQ0lzSW1Ga2JXbHVJanAwY25WbExDSnBZWFFpT2pFMk5UZzBNVFEwTWpaOS5ibzRXZnU0dUtmdXZoQVlIZHpvN2lvSXZsWFB3T2FSNGU1YVhDekFMVk1v
 This means we can execute that exact command and be the user rabbit while doing it.
 
   `sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py`
@@ -58,3 +58,15 @@ This gives us a reverse shell as "hatter" in /home/hatter we see a password.txt 
 
 password.txt : WhyIsARavenLikeAWritingDesk?
 User: hatter
+
+
+After we Do some linpeas and LinEnum enumeration we find that "pearl" has some extra "capabilities"
+We check GTFObins for a escalation method and it seems its really simple:
+
+`./perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/sh";'`
+This gives us root and we can read /home/alice/root.txt for the Flag.
+
+Now we still dont have the user flag, the hint is everything is upside-down...
+If root.txt is in the alice folder, maybe user.txt is in /root/user.txt even though we cannot ls `/root/`.
+
+`cat /root/user.txt` gives us the user flag, and we complete the room.24

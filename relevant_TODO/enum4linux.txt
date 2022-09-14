@@ -1,0 +1,185 @@
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Mon Sep 12 14:13:24 2022
+
+[34m =========================================( [0m[32mTarget Information[0m[34m )=========================================
+
+[0mTarget ........... 10.10.0.231
+RID Range ........ 500-550,1000-1050
+Username ......... 'Bob'
+Password ......... '!P@$$W0rD!123'
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+[34m ============================( [0m[32mEnumerating Workgroup/Domain on 10.10.0.231[0m[34m )============================
+
+[0m[33m
+[E] [0m[31mCan't find workgroup/domain
+
+[0m
+
+[34m ================================( [0m[32mNbtstat Information for 10.10.0.231[0m[34m )================================
+
+[0mLooking up status of 10.10.0.231
+No reply from 10.10.0.231
+
+[34m ====================================( [0m[32mSession Check on 10.10.0.231[0m[34m )====================================
+
+[0m[33m
+[+] [0m[32mServer 10.10.0.231 allows sessions using username 'Bob', password '!P@$$W0rD!123'
+
+[0m
+[34m =================================( [0m[32mGetting domain SID for 10.10.0.231[0m[34m )=================================
+
+[0mDomain Name: WORKGROUP
+Domain Sid: (NULL SID)
+[33m
+[+] [0m[32mCan't determine if host is part of domain or part of a workgroup
+
+[0m
+[34m ===================================( [0m[32mOS information on 10.10.0.231[0m[34m )===================================
+
+[0m[33m
+[E] [0m[31mCan't get OS info with smbclient
+
+[0m[33m
+[+] [0m[32mGot OS info for 10.10.0.231 from srvinfo: 
+[0m	10.10.0.231    Wk Sv NT SNT         
+	platform_id     :	500
+	os version      :	10.0
+	server type     :	0x9003
+
+
+[34m ========================================( [0m[32mUsers on 10.10.0.231[0m[34m )========================================
+
+[0m
+
+[34m ==================================( [0m[32mShare Enumeration on 10.10.0.231[0m[34m )==================================
+
+[0m
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+	nt4wrksv        Disk      
+SMB1 disabled -- no workgroup available
+[33m
+[+] [0m[32mAttempting to map shares on 10.10.0.231
+
+[0m//10.10.0.231/ADMIN$	[35mMapping: [0mDENIED[35m Listing: [0mN/A[35m Writing: [0mN/A
+//10.10.0.231/C$	[35mMapping: [0mDENIED[35m Listing: [0mN/A[35m Writing: [0mN/A
+[33m
+[E] [0m[31mCan't understand response:
+
+[0mNT_STATUS_NO_SUCH_FILE listing \*
+//10.10.0.231/IPC$	[35mMapping: [0mN/A[35m Listing: [0mN/A[35m Writing: [0mN/A
+//10.10.0.231/nt4wrksv	[35mMapping: [0mOK[35m Listing: [0mOK[35m Writing: [0mN/A
+
+[34m ============================( [0m[32mPassword Policy Information for 10.10.0.231[0m[34m )============================
+
+[0m[33m
+[E] [0m[31mUnexpected error from polenum:
+
+[0m
+
+[+] Attaching to 10.10.0.231 using Bob:!P@$$W0rD!123
+
+[+] Trying protocol 139/SMB...
+
+	[!] Protocol failed: Cannot request session (Called Name:10.10.0.231)
+
+[+] Trying protocol 445/SMB...
+
+	[!] Protocol failed: rpc_s_access_denied
+
+
+[33m
+[E] [0m[31mFailed to get password policy with rpcclient
+
+[0m
+
+[34m =======================================( [0m[32mGroups on 10.10.0.231[0m[34m )=======================================
+
+[0m[33m
+[+] [0m[32mGetting builtin groups:
+
+[0m[33m
+[+] [0m[32m Getting builtin group memberships:
+
+[0m[33m
+[+] [0m[32m Getting local groups:
+
+[0m[33m
+[+] [0m[32m Getting local group memberships:
+
+[0m[33m
+[+] [0m[32m Getting domain groups:
+
+[0m[33m
+[+] [0m[32m Getting domain group memberships:
+
+[0m
+[34m ===================( [0m[32mUsers on 10.10.0.231 via RID cycling (RIDS: 500-550,1000-1050)[0m[34m )===================
+
+[0m[33m
+[I] [0m[36mFound new SID: 
+[0mS-1-5-21-3981879597-1135670737-2718083060
+[33m
+[I] [0m[36mFound new SID: 
+[0mS-1-5-21-3981879597-1135670737-2718083060
+[33m
+[I] [0m[36mFound new SID: 
+[0mS-1-5-32
+[33m
+[I] [0m[36mFound new SID: 
+[0mS-1-5-32
+[33m
+[I] [0m[36mFound new SID: 
+[0mS-1-5-32
+[33m
+[I] [0m[36mFound new SID: 
+[0mS-1-5-32
+[33m
+[I] [0m[36mFound new SID: 
+[0mS-1-5-32
+[33m
+[+] [0m[32mEnumerating users using SID S-1-5-82-3876422241-1344743610-1729199087-774402673 and logon username 'Bob', password '!P@$$W0rD!123'
+
+[0m[33m
+[+] [0m[32mEnumerating users using SID S-1-5-82-3006700770-424185619-1745488364-794895919 and logon username 'Bob', password '!P@$$W0rD!123'
+
+[0m[33m
+[+] [0m[32mEnumerating users using SID S-1-5-82-271721585-897601226-2024613209-625570482 and logon username 'Bob', password '!P@$$W0rD!123'
+
+[0m[33m
+[+] [0m[32mEnumerating users using SID S-1-5-32 and logon username 'Bob', password '!P@$$W0rD!123'
+
+[0mS-1-5-32-544 BUILTIN\Administrators (Local Group)
+S-1-5-32-545 BUILTIN\Users (Local Group)
+S-1-5-32-546 BUILTIN\Guests (Local Group)
+S-1-5-32-547 BUILTIN\Power Users (Local Group)
+S-1-5-32-550 BUILTIN\Print Operators (Local Group)
+[33m
+[+] [0m[32mEnumerating users using SID S-1-5-21-3981879597-1135670737-2718083060 and logon username 'Bob', password '!P@$$W0rD!123'
+
+[0mS-1-5-21-3981879597-1135670737-2718083060-500 RELEVANT\Administrator (Local User)
+S-1-5-21-3981879597-1135670737-2718083060-501 RELEVANT\Guest (Local User)
+S-1-5-21-3981879597-1135670737-2718083060-503 RELEVANT\DefaultAccount (Local User)
+S-1-5-21-3981879597-1135670737-2718083060-513 RELEVANT\None (Domain Group)
+S-1-5-21-3981879597-1135670737-2718083060-1002 RELEVANT\Bob (Local User)
+[33m
+[+] [0m[32mEnumerating users using SID S-1-5-82-2094419441-2301267808-272098454-1219398644 and logon username 'Bob', password '!P@$$W0rD!123'
+
+[0m[33m
+[+] [0m[32mEnumerating users using SID S-1-5-80 and logon username 'Bob', password '!P@$$W0rD!123'
+
+[0m[33m
+[+] [0m[32mEnumerating users using SID S-1-5-80-3139157870-2983391045-3678747466-658725712 and logon username 'Bob', password '!P@$$W0rD!123'
+
+[0m
+[34m ================================( [0m[32mGetting printer info for 10.10.0.231[0m[34m )================================
+
+[0mNo printers returned.
+
+
+enum4linux complete on Mon Sep 12 14:22:45 2022
+

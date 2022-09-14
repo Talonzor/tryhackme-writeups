@@ -1,0 +1,61 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-16 04:49 EDT
+NSE: Loaded 45 scripts for scanning.
+Initiating Parallel DNS resolution of 1 host. at 04:49
+Completed Parallel DNS resolution of 1 host. at 04:49, 8.06s elapsed
+Initiating SYN Stealth Scan at 04:49
+Scanning 10.10.167.198 [65535 ports]
+Discovered open port 80/tcp on 10.10.167.198
+Discovered open port 3389/tcp on 10.10.167.198
+SYN Stealth Scan Timing: About 17.71% done; ETC: 04:52 (0:02:24 remaining)
+SYN Stealth Scan Timing: About 38.39% done; ETC: 04:52 (0:01:38 remaining)
+SYN Stealth Scan Timing: About 63.34% done; ETC: 04:51 (0:00:53 remaining)
+Completed SYN Stealth Scan at 04:51, 130.24s elapsed (65535 total ports)
+Initiating Service scan at 04:51
+Scanning 2 services on 10.10.167.198
+Completed Service scan at 04:51, 6.11s elapsed (2 services on 1 host)
+Initiating OS detection (try #1) against 10.10.167.198
+Retrying OS detection (try #2) against 10.10.167.198
+NSE: Script scanning 10.10.167.198.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 04:51
+Completed NSE at 04:51, 0.14s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 04:51
+Completed NSE at 04:51, 0.10s elapsed
+Nmap scan report for 10.10.167.198
+Host is up, received user-set (0.026s latency).
+Scanned at 2022-06-16 04:49:28 EDT for 142s
+Not shown: 65533 filtered ports
+Reason: 65533 no-responses
+PORT     STATE SERVICE       REASON          VERSION
+80/tcp   open  http          syn-ack ttl 127 Microsoft IIS httpd 10.0
+3389/tcp open  ms-wbt-server syn-ack ttl 127 Microsoft Terminal Services
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2012|2016 (90%), FreeBSD 6.X (85%)
+OS CPE: cpe:/o:microsoft:windows_server_2012:r2 cpe:/o:microsoft:windows_server_2016 cpe:/o:freebsd:freebsd:6.2
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+Aggressive OS guesses: Microsoft Windows Server 2012 R2 (90%), Microsoft Windows Server 2016 (89%), FreeBSD 6.2-RELEASE (85%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.91%E=4%D=6/16%OT=80%CT=%CU=%PV=Y%G=N%TM=62AAEF26%P=x86_64-pc-linux-gnu)
+SEQ(SP=104%GCD=1%ISR=10B%TI=I%TS=A)
+OPS(O1=M506NW8ST11%O2=M506NW8ST11%O3=M506NW8NNT11%O4=M506NW8ST11%O5=M506NW8ST11%O6=M506ST11)
+WIN(W1=2000%W2=2000%W3=2000%W4=2000%W5=2000%W6=2000)
+ECN(R=Y%DF=Y%TG=80%W=2000%O=M506NW8NNS%CC=Y%Q=)
+T1(R=Y%DF=Y%TG=80%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=N)
+U1(R=N)
+IE(R=N)
+
+Uptime guess: 0.006 days (since Thu Jun 16 04:42:49 2022)
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 150.23 seconds
+           Raw packets sent: 131247 (5.780MB) | Rcvd: 201 (26.105KB)

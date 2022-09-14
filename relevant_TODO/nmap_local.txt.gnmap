@@ -1,0 +1,5 @@
+# Nmap 7.92 scan initiated Mon Sep 12 10:29:29 2022 as: nmap -p- -sC -sV -Pn -v -A -oA nmap_local.txt 10.10.153.144
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.153.144 ()	Status: Up
+Host: 10.10.153.144 ()	Ports: 80/open/tcp//http//Microsoft IIS httpd 10.0/, 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds//Microsoft Windows Server 2008 R2 - 2012 microsoft-ds/, 3389/open/tcp//ms-wbt-server//Microsoft Terminal Services/, 49663/open/tcp//http//Microsoft IIS httpd 10.0/, 49666/open/tcp//msrpc//Microsoft Windows RPC/, 49668/open/tcp//msrpc//Microsoft Windows RPC/	Ignored State: filtered (65527)
+# Nmap done at Mon Sep 12 10:33:08 2022 -- 1 IP address (1 host up) scanned in 218.34 seconds

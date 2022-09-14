@@ -1,0 +1,62 @@
+# Nmap 7.92 scan initiated Mon Sep 12 10:29:29 2022 as: nmap -p- -sC -sV -Pn -v -A -oA nmap_local.txt 10.10.153.144
+Nmap scan report for 10.10.153.144
+Host is up (0.026s latency).
+Not shown: 65527 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Microsoft IIS httpd 10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows Server
+|_http-server-header: Microsoft-IIS/10.0
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds  Microsoft Windows Server 2008 R2 - 2012 microsoft-ds
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: RELEVANT
+|   NetBIOS_Domain_Name: RELEVANT
+|   NetBIOS_Computer_Name: RELEVANT
+|   DNS_Domain_Name: Relevant
+|   DNS_Computer_Name: Relevant
+|   Product_Version: 10.0.14393
+|_  System_Time: 2022-09-12T14:32:11+00:00
+| ssl-cert: Subject: commonName=Relevant
+| Issuer: commonName=Relevant
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-09-11T12:43:51
+| Not valid after:  2023-03-13T12:43:51
+| MD5:   51b0 96bd 1cb7 09ce af60 4592 ea84 83f5
+|_SHA-1: 2499 d396 e66d 67c0 2b03 7686 0576 c2b9 bf06 59c6
+|_ssl-date: 2022-09-12T14:32:51+00:00; -17s from scanner time.
+49663/tcp open  http          Microsoft IIS httpd 10.0
+|_http-title: IIS Windows Server
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+49666/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_smb-os-discovery: ERROR: Script execution failed (use -d to debug)
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2022-09-12T14:32:15
+|_  start_date: 2022-09-12T13:47:42
+|_ms-sql-info: ERROR: Script execution failed (use -d to debug)
+|_clock-skew: mean: -16s, deviation: 0s, median: -17s
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep 12 10:33:08 2022 -- 1 IP address (1 host up) scanned in 218.34 seconds
